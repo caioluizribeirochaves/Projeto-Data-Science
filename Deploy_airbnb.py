@@ -18,7 +18,7 @@ x_listas = {
     'property_type': ['Apartment', 'Bed and breakfast', 'Condominium', 'Guest suite', 'Guesthouse', 'Hostel', 'House',
                       'Loft', 'Outros', 'Serviced apartment'],
     'room_type': ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room'],
-    'cancelation_policy': ['flexible', 'moderate', 'strict', 'strict_14_with_grace_period']
+    'cancellation_policy': ['flexible', 'moderate', 'strict', 'strict_14_with_grace_period']
     }
 
 dicionario = {}
@@ -52,7 +52,9 @@ if botao:
     dicionario.update(x_numericos)
     dicionario.update(x_tf)
     valores_x = pd.DataFrame(dicionario, index=[0])
+    dados = pd.read_csv('dados.csv')
+    colunas = list(dados.columns)[1:-1]
+    valores_x = valores_x[colunas]
     modelo = joblib.load('modelo.joblib')
     preco = modelo.predict(valores_x)
     st.write(preco[0])
-    
