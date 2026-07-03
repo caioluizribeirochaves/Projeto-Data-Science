@@ -7,7 +7,6 @@ import pandas as pd
 import streamlit as st
 import joblib
 
-# modelo = joblib.load('modelo.joblib')
 
 x_numericos = {'latitude': 0, 'longitude': 0, 'accommodates': 0, 'bathrooms': 0, 'bedrooms': 0, 'beds': 0,
                'extra_people': 0,
@@ -49,3 +48,11 @@ for item in x_listas:
 
 botao = st.button('Previsão de preço do imóvel')
 
+if botao:
+    dicionario.update(x_numericos)
+    dicionario.update(x_tf)
+    valores_x = pd.DataFrame(dicionario, index=[0])
+    modelo = joblib.load('modelo.joblib')
+    preco = modelo.predict(valores_x)
+    st.write(preco[0])
+    
