@@ -57,5 +57,5 @@ Certifique-se de ter o Python instalado. É recomendado o uso de um ambiente vir
 ## 💡 Preview do Projeto
 
 
-![Preview do App](GIF/GIF-FUNCIONAMENTO.GIF)
+![Preview do App](GIF/GIF-FUNCIONAMENTO.gif)
 
