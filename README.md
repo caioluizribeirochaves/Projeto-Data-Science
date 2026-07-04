@@ -56,6 +56,6 @@ Certifique-se de ter o Python instalado. É recomendado o uso de um ambiente vir
 
 ## 💡 Preview do Projeto
 
-```markdown
-![Preview do App](GIF-FUNCIONAMENTO.GIF)
+
+![Preview do App](GIF/GIF-FUNCIONAMENTO.GIF)
 
